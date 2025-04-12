@@ -1,0 +1,26 @@
+[package]
+name = "rust_knn"
+version = "0.1.0"
+edition = "2021"
+authors = ["sebseb7"]
+description = "A Rust library for k-nearest neighbors search with support for word-order independent matching"
+repository = "https://github.com/sebseb7/rust_knn"
+license = "0BSD"
+keywords = ["knn", "search", "levenshtein", "jaccard", "string-similarity"]
+categories = ["algorithms", "text-processing"]
+
+[lib]
+name = "rust_knn"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+serde = { version = "1.0.164", features = ["derive"] }
+serde_json = "1.0.96"
+lazy_static = "1.4.0"
+rand = "0.8.5"
+
+[build-dependencies]
+napi-build = "2.0.1"
+
+[package.metadata.cargo-feature-combinations]
+denylist = ["default"]
